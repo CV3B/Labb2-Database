@@ -1,0 +1,81 @@
+<Window x:Class="Labb2_Database.ViewModel.EditPlaylistView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Labb2_Database.ViewModel"
+        mc:Ignorable="d"
+        DataContext="{Binding EditPlaylistViewModel}"
+        Title="EditPlaylistViewModel" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Margin="20 0 0 0" Content="{Binding currentPlaylistName}" />
+        <DataGrid
+            ItemsSource="{Binding TracksInPlaylist}"
+            SelectedItem="{Binding SelectedTrackInPlaylist}"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserResizeColumns="False"
+            CanUserDeleteRows="False"
+            IsReadOnly="True"
+            SelectionMode="Single"
+            Margin="20 0 20 20"
+            Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Composer" Binding="{Binding Composer}" />
+                <DataGridTextColumn Header="Milliseconds" Binding="{Binding Milliseconds}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Margin="20 0 0 0" Grid.Column="1" Content="Track Library" />
+        <DataGrid
+            ItemsSource="{Binding AvailableTracks}"
+            SelectedItem="{Binding SelectedTrackInTracks}"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserResizeColumns="False"
+            CanUserDeleteRows="False"
+            IsReadOnly="True"
+            SelectionMode="Single"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="20 0 20 20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Composer" Binding="{Binding Composer}" />
+                <DataGridTextColumn Header="Milliseconds" Binding="{Binding Milliseconds}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Grid Grid.Column="1" Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button
+                    Command="{Binding AddTrackToPlaylistCommand}"
+                    Height="20"
+                    Width="150"
+                    Margin="20 0 0 20">
+                    Add Track To Playlist
+                </Button>
+                <Button
+                    Command="{Binding RemoveTrackFromPlaylistCommand}"
+                    Height="20"
+                    Width="150"
+                    Margin="20 0 0 20">
+                    Remove Track From Playlist
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="Labb2_Database.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labb2_Database"
+        xmlns:views="clr-namespace:Labb2_Database.Views"
+        mc:Ignorable="d"
+        Title="Music" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Playlists">
+                <views:PlaylistView />
+            </TabItem>
+            <TabItem Header="Artists">
+                <views:ArtistView />
+            </TabItem>
+            <TabItem Header="Albums">
+                <views:AlbumView />
+            </TabItem>
+            <TabItem Header="Tracks">
+                <views:TrackView />
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</Window>
