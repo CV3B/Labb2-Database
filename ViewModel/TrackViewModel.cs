@@ -61,6 +61,8 @@ public class TrackViewModel : ViewModelBase
             _selectedTrack = value;
             TrackName = value.Name;
             TrackLength = value.Milliseconds;
+            SelectedAlbum = albumViewModel.Albums.FirstOrDefault(a => a.AlbumId == SelectedTrack.AlbumId);
+            SelectedGenre = Genres.FirstOrDefault(g => g.GenreId == SelectedTrack.GenreId);
             RaisePropertyChanged();
             RemoveTrackCommand.RaiseCanExecuteChanged();
         }
@@ -183,6 +185,7 @@ public class TrackViewModel : ViewModelBase
         track.Name = TrackName;
         track.AlbumId = SelectedAlbum.AlbumId;
         track.Milliseconds = TrackLength;
+        track.GenreId = SelectedGenre.GenreId;
         db.SaveChanges();
 
         LoadTracks();

@@ -156,3 +156,4 @@ C:\Users\calle\RiderProjects\Labb2-Database\Labb2-Database\obj\Debug\net8.0-wind
 C:\Users\calle\RiderProjects\Labb2-Database\Labb2-Database\obj\Debug\net8.0-windows\Views\AlbumView.baml
 C:\Users\calle\RiderProjects\Labb2-Database\Labb2-Database\obj\Debug\net8.0-windows\Views\TrackView.g.cs
 C:\Users\calle\RiderProjects\Labb2-Database\Labb2-Database\obj\Debug\net8.0-windows\Views\TrackView.baml
+C:\Users\calle\RiderProjects\Labb2-Database\Labb2-Database\obj\Debug\net8.0-windows\Labb2-Database.sourcelink.json
